@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="card">
     <h1>{{ msg }}</h1>
    
   </div>
@@ -7,10 +7,12 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  name: 'Cardscomponent',
+ data() {
+   return {
+     msg: 'value'
+   }
+ },
 }
 </script>
 

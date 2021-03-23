@@ -3,10 +3,12 @@ import App from './App.vue'
 import Vuex from 'vuex'
 
 import './sass/main.scss'
+import router from './router'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
 
 new Vue({
-  render: h => h(App),
+  router,
+  render: h => h(App)
 }).$mount('#app')

@@ -1,7 +1,8 @@
 <template>
   <div class="card">
-    <h1>{{ msg }}</h1>
-   
+   <div class="card__content">
+     
+   </div>
   </div>
 </template>
 
@@ -10,7 +11,7 @@ export default {
   name: 'Cardscomponent',
  data() {
    return {
-     msg: 'value'
+    //  msg: 'value'
    }
  },
 }

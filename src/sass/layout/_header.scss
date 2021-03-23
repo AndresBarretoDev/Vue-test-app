@@ -1,0 +1,12 @@
+.header {
+    width: 100%;
+    padding: 25px 20px;
+    @include flex;
+    &__title{
+        margin-left: auto;
+        font-weight: 800;
+    }
+    &__user{
+        margin-left: auto;
+    }
+}

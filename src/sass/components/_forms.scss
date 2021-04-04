@@ -1,0 +1,12 @@
+.form{
+    &__input{
+        width: 100%;
+        background: transparent;
+        font-weight: 500;
+        border: unset;
+        outline: unset;
+        @include placeholder{
+            color: var(--primary);
+        }
+    }
+}

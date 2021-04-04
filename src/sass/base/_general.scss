@@ -2,7 +2,10 @@ html, body, body *, *, *::before, *::after {
     box-sizing: border-box;
 }
 body{
-	background: #fafafa;
+	background:var(--secondary);
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 body, html, h6, h5, h4, h3, h2, h1, p {
 	font-family: $font-family;

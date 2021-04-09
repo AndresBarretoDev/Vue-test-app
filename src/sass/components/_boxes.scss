@@ -37,7 +37,8 @@
    width: auto;
    display: flex;
    flex-wrap: wrap;
-   padding:0 10px 7px;
+   padding: 0 10px 7px;
+   position: relative;
 
    &__head {
       width: 100%;
@@ -53,7 +54,7 @@
 
       .time {
          font-size: toRem(10);
-         color: var( --color-text);
+         color: var(--color-text);
       }
    }
 
@@ -66,7 +67,7 @@
    &__actions {
       display: flex;
       align-items: center;
-      
+
       button {
          border: unset;
          padding: 0;
@@ -79,23 +80,36 @@
          }
       }
    }
-   &--response{
+
+   &--response {
       width: 100%;
       flex-wrap: nowrap;
-      .commentBox__head{
+
+      @include mq(tab) {
+         flex-wrap: wrap;
+      }
+      
+      .commentBox__head {
          width: auto;
          min-width: 15%;
-         margin:0;
+         margin: 0;
+         padding-right: 15px;
+         @include mq(tab) {
+            margin-bottom: 10px;
+         }
       }
-      .commentBox__post{
+
+      .commentBox__post {
          margin-bottom: 0;
       }
    }
 }
-.reactions{
+
+.reactions {
    display: flex;
    align-items: center;
-   &__tag{
+
+   &__tag {
       display: block;
       min-width: 12px;
       width: 12px;
@@ -108,9 +122,55 @@
       margin-left: -4px;
    }
 }
-.counter{
+
+.reactions-opts {
+   position: absolute;
+   bottom: 0;
+   width: auto;
+   font-size: 12px;
+   background: var(--white);
+   border: 1px solid var(--tertiary);
+   box-shadow: 0 3px 5px var(--tertiary);
+   border-radius: 25px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   transform: translateY(100px);
+   opacity: 0;
+   pointer-events: none;
+   transition: all .4s ease;
+   padding: 5px 15px;
+
+   &.show {
+      transform: translateY(-22px);
+      opacity: 1;
+      pointer-events: all;
+
+   }
+
+   span {
+      cursor: pointer;
+      font-size: 25px;
+      margin: 5px;
+      display: block;
+   }
+}
+
+.counter {
    font-size: toRem(12);
-   color: var(--primary);
+   color: var(--color-text);
    font-weight: 600;
    line-height: 1;
+}
+
+.encanta {
+   background: #007bff;
+}
+
+.sorprende {
+   background: #dc3545;
+}
+
+.gusta {
+   background: #ffc107;
 }

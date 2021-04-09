@@ -7,7 +7,6 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         infoPost:[],
-        usersPost:[],
         reactions:[],
         showCommentBox:{
             status:false, 
@@ -18,41 +17,51 @@ export const store = new Vuex.Store({
         createPost(state, payload){
             state.infoPost.push(payload);
         },
-        createUserPost(state, payload){
-            const { postId , comment } = payload;
-            const arrTemp = state.infoPost.map( (post) =>{
-                if (post.id === postId) post.comments = [...post.comments, comment]
-                return post
-            });
-            state.infoPos = arrTemp
+        createUserComment(state, payload){
+            state.infoPos = payload
         },
         toggleCommentBox(state, payload){
             state.showCommentBox = {
                 status: true,
                 id:payload
             }
+        },
+        handleReactions(state, payload){
+            // console.log("mutation add", state, payload);
+            state.infoPos = payload
         }
     },
     actions:{
         createPost({commit}, payload){
-            // simulate response from external service
-            setTimeout(() => {
-                commit('createPost', payload)
-            }, 500);
+            commit('createPost', payload)
         },
-        createUserPost({commit}, payload){
-            // simulate response from external service
-            setTimeout(() => {
-                commit('createUserPost', payload)
-            }, 500);
+        createUserComment({commit},{ postId , comment }){
+            const arrTemp = this.state.infoPost.map( (post) =>{
+                if (post.id === postId) post.comments = [...post.comments, comment]
+                return post
+            });
+            commit('createUserComment', arrTemp)
         },
         toggleCommentBox({commit}, payload){
-            commit('toggleCommentBox', payload)
+            commit('toggleCommentBox', payload);
+        },
+        handleReactions( { commit },payload){
+            const { postId, text} = payload;
+            const arrTemp = this.state.infoPost.map( (post) =>{
+                if (post.id === postId) post.reactions = [...post.reactions, text]
+                return post
+            });
+            commit('handleReactions', arrTemp);
+            handlePush()
+            
         }
     },
     getters:{
         getAllPost: state => state.infoPost, 
-        getAllUserPost: state => state.usersPost, 
         getAllReactions: state => state.reactions, 
-    }
+    },
+   
 });
+const handlePush = ()=>{
+console.log("handle push");
+}

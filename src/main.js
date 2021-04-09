@@ -6,9 +6,10 @@ import router from './router'
 import { store } from './store/index'
 import moment from 'moment';
 import './sass/main.scss'
-
+moment.locale('es');
+Vue.prototype.moment = moment
 Vue.config.productionTip = false
-Vue.use({Vuex, moment})
+Vue.use(Vuex)
 
 new Vue({
   router,

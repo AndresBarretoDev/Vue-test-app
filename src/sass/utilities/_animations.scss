@@ -26,7 +26,12 @@
 .slide-in-bottom{
 	animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
+.fade-enter-active, .fade-leave-active {
+	transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+	opacity: 0;
+  }
 @keyframes rotate {
 	from {
 		transform: rotate(0);
@@ -266,6 +271,30 @@
 	}
   }
 
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  @keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
 /**
  * ----------------------------------------
  * animation fade-in-fwd

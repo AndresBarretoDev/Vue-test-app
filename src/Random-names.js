@@ -7,7 +7,7 @@ function getRandomInt(min, max) {
 }
 
 function generateName() {
-    var name1 = ['Pedro', 'Juan','Felipe','Camila','Rosa','Sara','Emily','Angela','Santiago','José','Luisa','Andrea'];
+    var name1 = ['Pedro', 'Juan','Felipe','Camila','Rosa','Sara','Emily','Angela','Santiago','José','Luisa','Andrea','Liliana','Alejandro','Omar'];
 
     var name2 = ['Doe','Barreto','Lopez','Rojas','Oliveros','Silva','Camargo','Pérez','Jiménez','Herrera','Martinez',];
 

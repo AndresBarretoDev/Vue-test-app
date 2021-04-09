@@ -33,7 +33,7 @@
     data() {
       return {
         modelPost: '',
-        moment
+        moment, 
       }
     },
     computed:{
@@ -51,7 +51,8 @@
             id: new Date().getTime(),
             image:'https://picsum.photos/300/300?random=1', 
             hour:moment().format(),
-            comments:[]
+            comments:[],
+            reactions:[]
           }
           this.createPost(userInfo);
           this.modelPost = ''

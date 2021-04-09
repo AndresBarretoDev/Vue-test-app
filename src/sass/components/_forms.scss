@@ -1,12 +1,39 @@
-.form{
-    &__input{
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea {
+    font-family: inherit;
+
+    @include placeholder {
+        font-size: toRem(15);
+    }
+}
+
+.form {
+
+    &__input,
+    &__textarea {
         width: 100%;
         background: transparent;
         font-weight: 500;
         border: unset;
         outline: unset;
-        @include placeholder{
+        background-color: var(--white);
+
+        @include placeholder {
             color: var(--primary);
+        }
+    }
+
+    &__textarea {
+        resize: unset;
+
+        &--bordered {
+            border: 1px solid var(--tertiary);
+            padding: 15px 15px 5px 15px;
+            @include placeholder {
+                color: var(--color-text);
+            }
         }
     }
 }

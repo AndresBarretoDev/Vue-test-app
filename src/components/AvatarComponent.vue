@@ -1,11 +1,14 @@
 <template>
     <div class="avatar">
-        <img src="https://picsum.photos/300/300?random=1" alt="" class="image-cover">
+        <img :src="image" alt="" class="image-cover">
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Avatar'
+        name: 'Avatar',
+        props:{
+            image:String
+        }
     }
 </script>

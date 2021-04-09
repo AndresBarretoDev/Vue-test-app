@@ -14,31 +14,50 @@
     &__middle,
     &__bottom {
         width: 100%;
-        padding: 7px;
+        padding: 15px 10px 10px 10px;
+        animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     }
 
     &__middle {
         display: flex;
+
         .btn--primary {
             margin-left: auto;
         }
     }
-    &__bottom{
+
+    &__bottom {
         display: flex;
         align-items: flex-start;
         background: var(--secondary);
     }
-    &--post{
-        .cardBox__top{
+
+    &--post {
+        .cardBox__top {
             display: flex;
             align-items: flex-start;
         }
-        .cardBox__bottom{
+
+        .cardBox__content {
+            width: 100%;
+        }
+
+        .cardBox__bottom {
             padding: 15px;
+        }
+
+        .cardBox__footer {
+            width: 100%;
+            padding: 20px;
+            background: var(--secondary);
+            display: flex;
+            flex-direction: column;
+            animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         }
     }
 }
-.bg-secondary{
+
+.bg-secondary {
     background: var(--secondary);
 
 }

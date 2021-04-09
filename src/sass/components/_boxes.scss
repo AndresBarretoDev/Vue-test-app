@@ -12,8 +12,9 @@
    height: 40px;
    border-radius: 100%;
    overflow: hidden;
-   margin: 0  auto;
+   margin: 0;
    margin-right: 5px;
+   background: var(--secondary);
 }
 
 .image {
@@ -48,19 +49,17 @@
          font-size: toRem(15);
          color: var(--primary);
          font-weight: 600;
-         line-height: 1;
       }
 
       .time {
          font-size: toRem(10);
-         color: var(--tertiary);
-         line-height: 1;
+         color: var( --color-text);
       }
    }
 
    &__post {
+      width: 100%;
       font-size: toRem(14);
-      line-height: 1;
       margin-bottom: 10px;
    }
 
@@ -81,6 +80,7 @@
       }
    }
    &--response{
+      width: 100%;
       flex-wrap: nowrap;
       .commentBox__head{
          width: auto;
